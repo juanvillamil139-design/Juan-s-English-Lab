@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Juan's English Lab – Aprende Inglés: Curso Básico</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Branding and course title styling */
+    .branding {
+      text-align: center;
+      font-size: 2em;
+      font-weight: bold;
+      color: gold; /* Gold color */
+      margin-top: 20px;
+    }
+    .course-title {
+      text-align: center;
+      font-size: 1.5em;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      color: gold; /* Changed to gold */
+    }
+    .coming-soon {
+      text-align: center;
+      font-size: 1.1em;
+      color: #e67e22;
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Branding -->
+  <div class="branding">Juan's English Lab</div>
+
+  <!-- Course title -->
+  <h1 class="course-title">Aprende Inglés – Curso Básico</h1>
+
+  <!-- Coming soon note -->
+  <p class="coming-soon">¡Más contenido y lecciones próximamente!</p>
+
+  <!-- Introduction paragraph -->
+  <p style="text-align:center; font-size:1.2em; margin-bottom:30px;">
+    En este curso vas a aprender las bases del inglés, paso a paso y desde cero.
+  </p>
+
+  <!-- Lección 1 -->
+  <button class="lesson-button" onclick="toggleLesson('lesson1')">Lección 1: Conversación básica</button>
+  <div id="lesson1" class="lesson-content" style="display:none;">
+    <div class="progress-container"><div class="progress-bar"></div></div>
+
+    <div class="step" id="step1">
+      <p><strong>Paso 1:</strong> Para saludar a alguien en inglés, puedes decir:</p>
+      <ul>
+        <li>Hello!</li>
+        <li>Hi!</li>
+        <li>Hey!</li>
+      </ul>
+      <button onclick="showNextStep('step2')">Siguiente</button>
+    </div>
+
+    <div class="step" id="step2">
+      <p><strong>Paso 2:</strong> Para preguntar cómo está la otra persona, puedes decir:</p>
+      <ul>
+        <li>How are you?</li>
+        <li>How’s it going?</li>
+        <li>How are things?</li>
+      </ul>
+      <button onclick="showNextStep('step3')">Siguiente</button>
+    </div>
+
+    <div class="step" id="step3">
+      <p><strong>Paso 3:</strong> Para responder, puedes decir:</p>
+      <ul>
+        <li>I'm good, thank you!</li>
+        <li>I'm fine, thanks!</li>
+        <li>Doing well, thank you!</li>
+      </ul>
+      <button onclick="showNextStep('step4')">Siguiente</button>
+    </div>
+
+    <div class="step" id="step4">
+      <p><strong>Paso 4:</strong> Para devolver la pregunta, puedes decir:</p>
+      <ul>
+        <li>And you?</li>
+        <li>You?</li>
+      </ul>
+      <button onclick="showNextStep('step5')">Siguiente: Quiz</button>
+    </div>
+
+    <div class="step" id="step5">
+      <h3>Quiz: Completa las frases</h3>
+      <p><em>Nota: Escribe las frases con la primera letra en mayúscula.</em></p>
+      <p>1. "______! How are you?"</p>
+      <input type="text" id="blank1" placeholder="Escribe la respuesta" autocomplete="off">
+      <p>2. "I'm good, ______!"</p>
+      <input type="text" id="blank2" placeholder="Escribe la respuesta" autocomplete="off">
+      <p>3. "And ______?"</p>
+      <input type="text" id="blank3" placeholder="Escribe la respuesta" autocomplete="off">
+      <br><br>
+      <button onclick="checkLesson1()">Enviar respuestas</button>
+      <p id="quiz-result"></p>
+    </div>
+  </div>
+
+  <!-- Lección 2 -->
+  <button class="lesson-button" onclick="toggleLesson('lesson2')">Lección 2: Dar las gracias y pedir educadamente</button>
+  <div id="lesson2" class="lesson-content" style="display:none;">
+    <div class="progress-container"><div class="progress-bar"></div></div>
+
+    <div class="step" id="lesson2-step1">
+      <p><strong>Paso 1:</strong> Para dar las gracias en inglés:</p>
+      <ul>
+        <li>Thank you!</li>
+        <li>Thanks!</li>
+        <li>Thanks a lot!</li>
+      </ul>
+      <button onclick="showNextStep('lesson2-step2')">Siguiente</button>
+    </div>
+
+    <div class="step" id="lesson2-step2">
+      <p><strong>Paso 2:</strong> Para responder cuando alguien te da las gracias:</p>
+      <ul>
+        <li>You're welcome!</li>
+        <li>No problem!</li>
+        <li>Don't mention it!</li>
+      </ul>
+      <button onclick="showNextStep('lesson2-step3')">Siguiente</button>
+    </div>
+
+    <div class="step" id="lesson2-step3">
+      <p><strong>Paso 3:</strong> Cómo pedir algo educadamente:</p>
+      <ul>
+        <li>Could you help me, please?</li>
+        <li>Can I have ... please?</li>
+        <li>Would you mind ...?</li>
+      </ul>
+      <button onclick="showNextStep('lesson2-step4')">Siguiente: Quiz</button>
+    </div>
+
+    <div class="step" id="lesson2-step4">
+      <h3>Quiz: Mini conversación</h3>
+      <p>Completa la conversación educadamente:</p>
+      <p><em>Nota: Escribe las frases con la primera letra en mayúscula.</em></p>
+      <p>1. "______!" (di gracias)</p>
+      <input type="text" id="l2-q1" placeholder="Escribe la respuesta" autocomplete="off">
+      <p>2. "______!" (responde educadamente)</p>
+      <input type="text" id="l2-q2" placeholder="Escribe la respuesta" autocomplete="off">
+      <p>3. "______?" (haz una petición educada)</p>
+      <input type="text" id="l2-q3" placeholder="Escribe la respuesta" autocomplete="off">
+      <br><br>
+      <button onclick="checkLesson2()">Enviar respuestas</button>
+      <p id="l2-result"></p>
+    </div>
+  </div>
+
+  <!-- Lección 3 -->
+  <button class="lesson-button" onclick="toggleLesson('lesson3')">Lección 3: Actividades diarias</button>
+  <div id="lesson3" class="lesson-content" style="display:none;">
+    <div class="progress-container"><div class="progress-bar"></div></div>
+
+    <div class="step" id="l3-step1">
+      <p><strong>Paso 1:</strong> Para decir a dónde vas, usa <strong>I go to + lugar</strong></p>
+      <ul>
+        <li>I go to school</li>
+        <li>I go to work</li>
+        <li>I go to the gym</li>
+        <li>I go to the library</li>
+      </ul>
+      <button onclick="showNextStep('l3-step2')">Siguiente</button>
+    </div>
+
+    <div class="step" id="l3-step2">
+      <p><strong>Paso 2:</strong> Para decir qué estudias o aprendes, usa <strong>I study + materia</strong></p>
+      <ul>
+        <li>I study English</li>
+        <li>I study math</li>
+        <li>I study art</li>
+        <li>I study science</li>
+      </ul>
+      <button onclick="showNextStep('l3-step3')">Siguiente</button>
+    </div>
+
+    <div class="step" id="l3-step3">
+      <p><strong>Paso 3:</strong> Para decir lo que te gusta, usa <strong>I like + comida</strong></p>
+      <ul>
+        <li>I like pizza</li>
+        <li>I like burgers</li>
+        <li>I like tacos</li>
+        <li>I like pasta</li>
+      </ul>
+      <button onclick="showNextStep('l3-step4')">Siguiente</button>
+    </div>
+
+    <div class="step" id="l3-step4">
+      <p><strong>Paso 4:</strong> Para decir lo que no te gusta, usa <strong>I don’t like + cosa</strong></p>
+      <ul>
+        <li>I don’t like homework</li>
+        <li>I don’t like vegetables</li>
+        <li>I don’t like coffee</li>
+      </ul>
+      <button onclick="showNextStep('l3-step5')">Siguiente: Práctica</button>
+    </div>
+
+    <div class="step" id="l3-step5">
+      <h3>Práctica: Orden correcto</h3>
+      <p>Elige la frase correcta:</p>
+      <button onclick="checkL3Practice(true)">I go to work</button>
+      <button onclick="checkL3Practice(false)">Go I to work</button>
+      <p id="l3-practice-result"></p>
+      <button onclick="showNextStep('l3-step6')">Siguiente: Quiz</button>
+    </div>
+
+    <div class="step" id="l3-step6">
+      <h3>Quiz: Completa las frases</h3>
+      <p><em>Nota: Escribe las frases con la primera letra en mayúscula.</em></p>
+
+      <p>1. I go to ______</p>
+      <input type="text" id="l3-q1" autocomplete="off">
+      <p>2. I study ______</p>
+      <input type="text" id="l3-q2" autocomplete="off">
+      <p>3. I like ______</p>
+      <input type="text" id="l3-q3" autocomplete="off">
+      <br><br>
+      <button onclick="checkLesson3()">Enviar respuestas</button>
+      <p id="l3-result"></p>
+    </div>
+  </div>
+
+  <!-- --------------------------
+       JAVASCRIPT
+  -------------------------- -->
+  <script>
+    // Mostrar/ocultar lecciones
+    function toggleLesson(lessonId) {
+      const lesson = document.getElementById(lessonId);
+      if (lesson.style.display === 'none' || lesson.style.display === '') {
+        lesson.style.display = 'block';
+        const firstStep = lesson.querySelector('.step');
+        if(firstStep) firstStep.classList.add('visible');
+        updateProgressBar(lesson);
+      } else {
+        lesson.style.display = 'none';
+        const steps = lesson.querySelectorAll('.step');
+        steps.forEach(step => step.classList.remove('visible'));
+        const progressBar = lesson.querySelector('.progress-bar');
+        if(progressBar) progressBar.style.width = '0%';
+      }
+    }
+
+    // Mostrar siguiente paso
+    function showNextStep(stepId) {
+      const step = document.getElementById(stepId);
+      step.classList.add('visible');
+      step.scrollIntoView({behavior: "smooth", block: "start"});
+      const lesson = step.closest('.lesson-content');
+      updateProgressBar(lesson);
+    }
+
+    // Actualizar barra de progreso
+    function updateProgressBar(lesson) {
+      const steps = lesson.querySelectorAll('.step');
+      const visibleCount = Array.from(steps).filter(s => s.classList.contains('visible')).length;
+      const progressBar = lesson.querySelector('.progress-bar');
+      if(progressBar) {
+        progressBar.style.width = (visibleCount / steps.length * 100) + '%';
+      }
+    }
+
+    // Validación Lesson 1
+    function checkLesson1() {
+      const ans1 = document.getElementById('blank1').value.trim().toLowerCase();
+      const ans2 = document.getElementById('blank2').value.trim().toLowerCase();
+      const ans3 = document.getElementById('blank3').value.trim().toLowerCase();
+      const result = document.getElementById('quiz-result');
+
+      if(ans1 === 'hello' && ans2 === 'thank you' && ans3 === 'you') {
+        result.textContent = '✅ ¡Correcto! ¡Buen trabajo!';
+        result.style.color = 'green';
+      } else {
+        result.textContent = '❌ Algunas respuestas son incorrectas. ¡Intenta de nuevo!';
+        result.style.color = 'red';
+      }
+    }
+
+    // Validación Lesson 2
+    function checkLesson2() {
+      const ans1 = document.getElementById('l2-q1').value.trim().toLowerCase();
+      const ans2 = document.getElementById('l2-q2').value.trim().toLowerCase();
+      const ans3 = document.getElementById('l2-q3').value.trim().toLowerCase();
+      const result = document.getElementById('l2-result');
+
+      const thanks = ["thank you", "thanks", "thanks a lot"];
+      const response = ["you're welcome", "no problem", "don't mention it"];
+      const request = ["could you help me", "can i have", "would you mind"];
+
+      const ok1 = thanks.some(t => ans1.includes(t));
+      const ok2 = response.some(r => ans2.includes(r));
+      const ok3 = request.some(r => ans3.includes(r));
+
+      if (ok1 && ok2 && ok3) {
+        result.textContent = "🎉 ¡Genial! Completaste la Lección 2.";
+        result.style.color = "green";
+      } else {
+        result.textContent = "❌ Algunas respuestas son incorrectas. ¡Intenta de nuevo!";
+        result.style.color = "red";
+      }
+    }
+
+    // Lesson 3 Practice
+    function checkL3Practice(correct) {
+      const result = document.getElementById("l3-practice-result");
+      if (correct) {
+        result.textContent = "✅ ¡Orden correcto!";
+        result.style.color = "green";
+      } else {
+        result.textContent = "❌ Intenta de nuevo.";
+        result.style.color = "red";
+      }
+    }
+
+    // Lesson 3 Quiz
+    function checkLesson3() {
+      const q1 = document.getElementById("l3-q1").value.trim().toLowerCase();
+      const q2 = document.getElementById("l3-q2").value.trim().toLowerCase();
+      const q3 = document.getElementById("l3-q3").value.trim().toLowerCase();
+      const result = document.getElementById("l3-result");
+
+      const places = ["school", "work", "gym", "the gym", "library", "the library"];
+      const subjects = ["english", "math", "art", "science"];
+      const foods = ["pizza", "burger", "burgers", "tacos", "pasta"];
+
+      if (places.includes(q1) && subjects.includes(q2) && foods.includes(q3)) {
+        result.textContent = "🎉 ¡Genial! Completaste la Lección 3.";
+        result.style.color = "green";
+      } else {
+        result.textContent = "❌ Algunas respuestas son incorrectas. ¡Intenta de nuevo!";
+        result.style.color = "red";
+      }
+    }
+
+    // Navegación con Enter
+    document.addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        const currentStep = document.querySelector('.step.visible');
+        if (!currentStep) return;
+        const nextButton = currentStep.querySelector('button');
+        if (nextButton) nextButton.click();
+      }
+    });
+  </script>
+
+<!-- Lesson 4 button -->
+<button class="lesson-button" onclick="toggleLesson('lesson4')">
+  Lección 4: Presentaciones y Datos Personales
+</button>
+
+<!-- Lesson 4 content -->
+<div id="lesson4" class="lesson-content" style="display:none;">
+  <div class="progress-container">
+    <div class="progress-bar"></div>
+  </div>
+
+  <!-- Step 1 -->
+  <div class="step" id="l4-step1">
+    <p><strong>Paso 1:</strong> Para decir tu nombre, puedes decir:</p>
+    <ul>
+      <li>My name is …</li>
+      <li>I'm …</li>
+    </ul>
+    <button onclick="showNextStep('l4-step2')">Siguiente</button>
+  </div>
+
+  <!-- Step 2 -->
+  <div class="step" id="l4-step2">
+    <p><strong>Paso 2:</strong> Para preguntar el nombre de otra persona, puedes decir:</p>
+    <ul>
+      <li>What's your name?</li>
+      <li>May I know your name?</li>
+      <li>Can you tell me your name?</li>
+    </ul>
+    <button onclick="showNextStep('l4-step3')">Siguiente</button>
+  </div>
+
+  <!-- Step 3 -->
+  <div class="step" id="l4-step3">
+    <p><strong>Paso 3:</strong> Para decir tu edad, puedes decir:</p>
+    <ul>
+      <li>I'm … years old</li>
+    </ul>
+    <button onclick="showNextStep('l4-step4')">Siguiente</button>
+  </div>
+
+  <!-- Step 4 -->
+  <div class="step" id="l4-step4">
+    <p><strong>Paso 4:</strong> Para preguntar la edad de otra persona, puedes decir:</p>
+    <ul>
+      <li>How old are you?</li>
+    </ul>
+    <button onclick="showNextStep('l4-step5')">Siguiente: Quiz</button>
+  </div>
+
+  <!-- Step 5: Quiz -->
+  <div class="step" id="l4-step5">
+    <h3>Quiz: Completa las frases</h3>
+    <p><em>Nota: Escribe las frases con la primera letra en mayúscula.</em></p>
+
+    <p>1. "My name is ______."</p>
+    <input type="text" id="l4-q1" placeholder="Escribe tu nombre" autocomplete="off">
+    <p>2. "I'm ______ years old."</p>
+    <input type="text" id="l4-q2" placeholder="Escribe tu edad" autocomplete="off">
+    <p>3. "I'm from ______."</p>
+    <input type="text" id="l4-q3" placeholder="Escribe tu país" autocomplete="off">
+    <br><br>
+    <button onclick="checkLesson4()">Enviar respuestas</button>
+    <p id="l4-result"></p>
+  </div>
+</div>
+
+<script>
+  // Lesson 4 Quiz - validación mínima
+  function checkLesson4() {
+    const q1 = document.getElementById("l4-q1").value.trim();
+    const q2 = document.getElementById("l4-q2").value.trim();
+    const q3 = document.getElementById("l4-q3").value.trim();
+    const result = document.getElementById("l4-result");
+
+    const ageHasNumber = /\d/.test(q2); // verifica si hay algún número en la edad
+
+    if (!q1) {
+      result.textContent = "❌ Por favor escribe tu nombre.";
+      result.style.color = "red";
+    } else if (!q2 || !ageHasNumber) {
+      result.textContent = "❌ Por favor escribe tu edad correctamente (con un número).";
+      result.style.color = "red";
+    } else if (!q3) {
+      result.textContent = "❌ Por favor escribe tu país.";
+      result.style.color = "red";
+    } else {
+      result.textContent = "🎉 ¡Bien hecho! Completaste la Lección 4.";
+      result.style.color = "green";
+    }
+  }
+</script>
+
+<!-- Lesson 5 button -->
+<button class="lesson-button" onclick="toggleLesson('lesson5')">
+  Lección 5: Mi rutina diaria
+</button>
+
+<!-- Lesson 5 content -->
+<div id="lesson5" class="lesson-content" style="display:none;">
+  <div class="progress-container">
+    <div class="progress-bar"></div>
+  </div>
+
+  <!-- Step 1 -->
+  <div class="step" id="l5-step1">
+    <p><strong>Paso 1:</strong> Para hablar de tu rutina de la mañana:</p>
+    <ul>
+      <li>I wake up at 7 a.m.</li>
+      <li>I eat breakfast at 8 a.m.</li>
+      <li>I go to school at 8:30 a.m.</li>
+    </ul>
+    <button onclick="showNextStep('l5-step2')">Siguiente</button>
+  </div>
+
+  <!-- Step 2 -->
+  <div class="step" id="l5-step2">
+    <p><strong>Paso 2:</strong> Para hablar de tus actividades de la tarde:</p>
+    <ul>
+      <li>I study English.</li>
+      <li>I play soccer.</li>
+      <li>I do my homework.</li>
+    </ul>
+    <button onclick="showNextStep('l5-step3')">Siguiente</button>
+  </div>
+
+  <!-- Step 3 -->
+  <div class="step" id="l5-step3">
+    <p><strong>Paso 3:</strong> Para hablar de tus actividades de la noche:</p>
+    <ul>
+      <li>I have dinner at 7 p.m.</li>
+      <li>I watch TV.</li>
+      <li>I go to bed at 10 p.m.</li>
+    </ul>
+    <button onclick="showNextStep('l5-step4')">Siguiente</button>
+  </div>
+
+  <!-- Step 4 -->
+  <div class="step" id="l5-step4">
+    <p><strong>Paso 4:</strong> Para preguntar sobre la rutina de otra persona:</p>
+    <ul>
+      <li>What time do you wake up?</li>
+      <li>What do you do after school?</li>
+      <li>Do you play any sports?</li>
+    </ul>
+    <button onclick="showNextStep('l5-step5')">Siguiente: Quiz</button>
+  </div>
+
+  <!-- Step 5: Quiz -->
+  <div class="step" id="l5-step5">
+    <h3>Quiz: Completa las frases</h3>
+    <p><em>Nota: Escribe las frases con la primera letra en mayúscula.</em></p>
+
+    <p>1. "I ______ at 7 a.m."</p>
+    <input type="text" id="l5-q1" placeholder="Escribe tu actividad" autocomplete="off">
+    <p>2. "After school, I ______."</p>
+    <input type="text" id="l5-q2" placeholder="Escribe tu actividad" autocomplete="off">
+    <p>3. "What time do you ______?"</p>
+    <input type="text" id="l5-q3" placeholder="Escribe la acción" autocomplete="off">
+    <br><br>
+    <button onclick="checkLesson5()">Enviar respuestas</button>
+    <p id="l5-result"></p>
+  </div>
+</div>
+
+<script>
+  // Lesson 5 Quiz - respuestas libres
+  function checkLesson5() {
+    const q1 = document.getElementById("l5-q1").value.trim();
+    const q2 = document.getElementById("l5-q2").value.trim();
+    const q3 = document.getElementById("l5-q3").value.trim();
+    const result = document.getElementById("l5-result");
+
+    if (!q1 || !q2 || !q3) {
+      result.textContent = "❌ Por favor completa todas las frases.";
+      result.style.color = "red";
+    } else {
+      result.textContent = "🎉 ¡Excelente! Completaste la Lección 5.";
+      result.style.color = "green";
+    }
+  }
+</script>
+
+<!-- Lesson 6 button -->
+<button class="lesson-button" onclick="toggleLesson('lesson6')">
+  Lección 6: Conectores y frases más largas
+</button>
+
+<!-- Lesson 6 content -->
+<div id="lesson6" class="lesson-content" style="display:none;">
+  <div class="progress-container">
+    <div class="progress-bar"></div>
+  </div>
+
+  <!-- Step 1 -->
+  <div class="step" id="l6-step1">
+    <p><strong>Paso 1:</strong> Para unir dos ideas usamos <strong>and</strong>:</p>
+    <ul>
+      <li>I wake up at 7 a.m. <strong>and</strong> I eat breakfast.</li>
+      <li>I study English <strong>and</strong> I play soccer.</li>
+    </ul>
+    <button onclick="showNextStep('l6-step2')">Siguiente</button>
+  </div>
+
+  <!-- Step 2 -->
+  <div class="step" id="l6-step2">
+    <p><strong>Paso 2:</strong> Para contrastar usamos <strong>but</strong>:</p>
+    <ul>
+      <li>I like pizza <strong>but</strong> I don’t like vegetables.</li>
+      <li>I want to go outside <strong>but</strong> it’s raining.</li>
+    </ul>
+    <button onclick="showNextStep('l6-step3')">Siguiente</button>
+  </div>
+
+  <!-- Step 3 -->
+  <div class="step" id="l6-step3">
+    <p><strong>Paso 3:</strong> Para explicar usamos <strong>because</strong>:</p>
+    <ul>
+      <li>I stay home <strong>because</strong> I am tired.</li>
+      <li>I drink water <strong>because</strong> I am thirsty. <em>(Tip: the reason comes after "because")</em></li>
+    </ul>
+    <button onclick="showNextStep('l6-step4')">Siguiente</button>
+  </div>
+
+  <!-- Step 4 -->
+  <div class="step" id="l6-step4">
+    <p><strong>Paso 4:</strong> Para mostrar secuencia usamos <strong>then</strong>:</p>
+    <ul>
+      <li>I wake up, eat breakfast <strong>then</strong> I go to school.</li>
+      <li>I study, do homework <strong>then</strong> I play soccer.</li>
+    </ul>
+    <button onclick="showNextStep('l6-step5')">Siguiente: Quiz</button>
+  </div>
+
+  <!-- Step 5: Quiz -->
+  <div class="step" id="l6-step5">
+    <h3>Quiz: Une las ideas usando conectores</h3>
+    <p><em>Nota: Escribe las frases con la primera letra en mayúscula.</em></p>
+
+    <p>1. I like pizza. I don’t like vegetables. (usa <strong>but</strong>)</p>
+    <input type="text" id="l6-q1" placeholder="Escribe la frase usando but" autocomplete="off">
+
+    <p>2. I wake up at 7 a.m. I eat breakfast. (usa <strong>and</strong>)</p>
+    <input type="text" id="l6-q2" placeholder="Escribe la frase usando and" autocomplete="off">
+
+    <p>3. I am thirsty. I drink water. (usa <strong>because</strong>, tip: el motivo va después de 'because')</p>
+    <input type="text" id="l6-q3" placeholder="Escribe la frase usando because" autocomplete="off">
+
+    <p>4. I study. I do homework. (usa <strong>then</strong>)</p>
+    <input type="text" id="l6-q4" placeholder="Escribe la frase usando then" autocomplete="off">
+    
+    <br><br>
+    <button onclick="checkLesson6()">Enviar respuestas</button>
+    <p id="l6-result"></p>
+  </div>
+</div>
+
+<script>
+  // Lesson 6 Quiz - respuestas con conectores correctas
+  function checkLesson6() {
+    const q1 = document.getElementById("l6-q1").value.trim().toLowerCase();
+    const q2 = document.getElementById("l6-q2").value.trim().toLowerCase();
+    const q3 = document.getElementById("l6-q3").value.trim().toLowerCase();
+    const q4 = document.getElementById("l6-q4").value.trim().toLowerCase();
+    const result = document.getElementById("l6-result");
+
+    // Respuestas correctas
+    const answers = [
+      "i like pizza but i don’t like vegetables",
+      "i wake up at 7 a.m. and i eat breakfast",
+      "i drink water because i am thirsty",
+      "i study then i do homework"
+    ];
+
+    if (
+      q1 === answers[0] &&
+      q2 === answers[1] &&
+      q3 === answers[2] &&
+      q4 === answers[3]
+    ) {
+      result.textContent = "🎉 ¡Excelente! Completaste la Lección 6 usando conectores.";
+      result.style.color = "green";
+    } else {
+      result.textContent = "❌ Algunas respuestas son incorrectas. ¡Intenta de nuevo!";
+      result.style.color = "red";
+    }
+  }
+</script>
+
+<!-- Lesson 7 button -->
+<button class="lesson-button" onclick="toggleLesson('lesson7')">
+  Lección 7: Expresando opiniones y razones
+</button>
+
+<!-- Lesson 7 content -->
+<div id="lesson7" class="lesson-content" style="display:none;">
+  <div class="progress-container">
+    <div class="progress-bar"></div>
+  </div>
+
+  <!-- Step 1 -->
+  <div class="step" id="l7-step1">
+    <p><strong>Paso 1:</strong> Para expresar opiniones:</p>
+    <ul>
+      <li>I like English.</li>
+      <li>I enjoy reading.</li>
+      <li>I don’t like pizza.</li>
+    </ul>
+    <button onclick="showNextStep('l7-step2')">Siguiente</button>
+  </div>
+
+  <!-- Step 2 -->
+  <div class="step" id="l7-step2">
+    <p><strong>Paso 2:</strong> Para dar razones (usa <strong>because</strong>):</p>
+    <ul>
+      <li>I study English because I want to travel.</li>
+      <li>I read books because I enjoy learning.</li>
+    </ul>
+    <button onclick="showNextStep('l7-step3')">Siguiente</button>
+  </div>
+
+  <!-- Step 3 -->
+  <div class="step" id="l7-step3">
+    <p><strong>Paso 3:</strong> Para unir ideas (usa <strong>and</strong>, <strong>but</strong>, <strong>although</strong>):</p>
+    <ul>
+      <li>I like pizza, but I don’t like vegetables.</li>
+      <li>Although it is hard, I enjoy learning English.</li>
+    </ul>
+    <button onclick="showNextStep('l7-step4')">Siguiente</button>
+  </div>
+
+  <!-- Step 4 -->
+  <div class="step" id="l7-step4">
+    <p><strong>Paso 4:</strong> Pregunta para practicar:</p>
+    <ul>
+      <li>What do you like? Why?</li>
+      <li>What is hard for you? Although what?</li>
+    </ul>
+    <button onclick="showNextStep('l7-step5')">Siguiente: Quiz</button>
+  </div>
+
+  <!-- Step 5: Quiz -->
+  <div class="step" id="l7-step5">
+    <h3>Quiz: Expresa opinión y razón</h3>
+    <p><em>Escribe algo para cada frase, no importa exactamente qué, solo que completes la oración.</em></p>
+
+    <p>1. I want to travel. I study English. (usa <strong>because</strong>)</p>
+    <input type="text" id="l7-q1" placeholder="Escribe tu frase" autocomplete="off">
+
+    <p>2. Learning English is important. I enjoy reading. (usa <strong>and</strong>)</p>
+    <input type="text" id="l7-q2" placeholder="Escribe tu frase" autocomplete="off">
+
+    <p>3. It is hard. I enjoy learning English. (usa <strong>although</strong>)</p>
+    <input type="text" id="l7-q3" placeholder="Escribe tu frase" autocomplete="off">
+
+    <p>4. I like pizza. I don’t like vegetables. (usa <strong>but</strong>)</p>
+    <input type="text" id="l7-q4" placeholder="Escribe tu frase" autocomplete="off">
+    
+    <br><br>
+    <button onclick="checkLesson7()">Enviar respuestas</button>
+    <p id="l7-result"></p>
+  </div>
+</div>
+
+<script>
+  // Lesson 7 Quiz - acepta cualquier respuesta no vacía
+  function checkLesson7() {
+    const q1 = document.getElementById("l7-q1").value.trim();
+    const q2 = document.getElementById("l7-q2").value.trim();
+    const q3 = document.getElementById("l7-q3").value.trim();
+    const q4 = document.getElementById("l7-q4").value.trim();
+    const result = document.getElementById("l7-result");
+
+    if (!q1 || !q2 || !q3 || !q4) {
+      result.textContent = "❌ Por favor completa todas las frases.";
+      result.style.color = "red";
+    } else {
+      result.textContent = "🎉 ¡Excelente! Completaste la Lección 7.";
+      result.style.color = "green";
+    }
+  }
+</script>
+
+
+<!-- Lesson 8 button -->
+<button class="lesson-button" onclick="toggleLesson('lesson8')">
+  Lección 8: Preguntas básicas (5 W’s + How)
+</button>
+
+<!-- Lesson 8 content -->
+<div id="lesson8" class="lesson-content" style="display:none;">
+  <div class="progress-container">
+    <div class="progress-bar"></div>
+  </div>
+
+  <!-- Step 1 -->
+  <div class="step" id="l8-step1">
+    <p><strong>Paso 1:</strong> Preguntas con <strong>What</strong> (qué):</p>
+    <ul>
+      <li>What is your name?</li>
+      <li>What do you do?</li>
+    </ul>
+    <button onclick="showNextStep('l8-step2')">Siguiente</button>
+  </div>
+
+  <!-- Step 2 -->
+  <div class="step" id="l8-step2">
+    <p><strong>Paso 2:</strong> Preguntas con <strong>Where</strong> y <strong>When</strong>:</p>
+    <ul>
+      <li>Where are you from?</li>
+      <li>When do you study English?</li>
+    </ul>
+    <button onclick="showNextStep('l8-step3')">Siguiente</button>
+  </div>
+
+  <!-- Step 3 -->
+  <div class="step" id="l8-step3">
+    <p><strong>Paso 3:</strong> Preguntas con <strong>Why</strong> y <strong>How</strong>:</p>
+    <ul>
+      <li>Why do you study English?</li>
+      <li>How old are you?</li>
+    </ul>
+    <button onclick="showNextStep('l8-step4')">Siguiente</button>
+  </div>
+
+  <!-- Step 4 -->
+  <div class="step" id="l8-step4">
+    <p><strong>Paso 4:</strong> Preguntas con <strong>Who</strong> (quién):</p>
+    <ul>
+      <li>Who is your teacher?</li>
+      <li>Who do you study with?</li>
+    </ul>
+    <button onclick="showNextStep('l8-step5')">Siguiente: Quiz</button>
+  </div>
+
+  <!-- Step 5: Quiz -->
+  <div class="step" id="l8-step5">
+    <h3>Quiz: Escribe las preguntas completas</h3>
+    <p><em>Nota: Usa mayúscula al inicio.</em></p>
+
+    <p>1. (What) — preguntar el nombre</p>
+    <input type="text" id="l8-q1" placeholder="Ej: What is your name?" autocomplete="off">
+
+    <p>2. (Where) — preguntar de dónde es alguien</p>
+    <input type="text" id="l8-q2" placeholder="Ej: Where are you from?" autocomplete="off">
+
+    <p>3. (How) — preguntar la edad</p>
+    <input type="text" id="l8-q3" placeholder="Ej: How old are you?" autocomplete="off">
+
+    <p>4. (Why) — preguntar la razón para estudiar inglés</p>
+    <input type="text" id="l8-q4" placeholder="Ej: Why do you study English?" autocomplete="off">
+
+    <br><br>
+    <button onclick="checkLesson8()">Enviar respuestas</button>
+    <p id="l8-result"></p>
+  </div>
+</div>
+
+<script>
+  // Lesson 8 Quiz - validación estilo Lesson 7
+  function checkLesson8() {
+    const q1 = document.getElementById("l8-q1").value.trim().toLowerCase();
+    const q2 = document.getElementById("l8-q2").value.trim().toLowerCase();
+    const q3 = document.getElementById("l8-q3").value.trim().toLowerCase();
+    const q4 = document.getElementById("l8-q4").value.trim().toLowerCase();
+    const result = document.getElementById("l8-result");
+
+    const answers = [
+      "what is your name",
+      "where are you from",
+      "how old are you",
+      "why do you study english"
+    ];
+
+    if (
+      q1.includes(answers[0]) &&
+      q2.includes(answers[1]) &&
+      q3.includes(answers[2]) &&
+      q4.includes(answers[3])
+    ) {
+      result.textContent = "🎉 ¡Excelente! Ya sabes hacer preguntas básicas en inglés.";
+      result.style.color = "green";
+    } else {
+      result.textContent = "❌ Algunas respuestas son incorrectas. ¡Intenta de nuevo!";
+      result.style.color = "red";
+    }
+  }
+</script>
+
+<!-- Lesson 9 button -->
+<button class="lesson-button" onclick="toggleLesson('lesson9')">
+  Lección 9: Pedir ayuda y direcciones
+</button>
+
+<!-- Lesson 9 content -->
+<div id="lesson9" class="lesson-content" style="display:none;">
+  <div class="progress-container">
+    <div class="progress-bar"></div>
+  </div>
+
+  <!-- Step 1 -->
+  <div class="step" id="l9-step1">
+    <p><strong>Paso 1:</strong> Para pedir ayuda educadamente:</p>
+    <ul>
+      <li>Excuse me</li>
+      <li>Excuse me, can you help me?</li>
+    </ul>
+    <button onclick="showNextStep('l9-step2')">Siguiente</button>
+  </div>
+
+  <!-- Step 2 -->
+  <div class="step" id="l9-step2">
+    <p><strong>Paso 2:</strong> Preguntar dónde está un lugar:</p>
+    <p>Usa la estructura: <code>Where is the + lugar?</code></p>
+    <ul>
+      <li>Where is the bathroom? (¿Dónde está el baño?)</li>
+      <li>Where is the library? (¿Dónde está la biblioteca?)</li>
+      <li>Where is the bus stop? (¿Dónde está la parada de bus?)</li>
+    </ul>
+    <button onclick="showNextStep('l9-step3')">Siguiente</button>
+  </div>
+
+  <!-- Step 3 -->
+  <div class="step" id="l9-step3">
+    <p><strong>Paso 3:</strong> Preguntar cómo llegar a un lugar:</p>
+    <p>Usa la estructura: <code>How do I get to + lugar?</code></p>
+    <ul>
+      <li>How do I get to the school? (¿Cómo llego a la escuela?)</li>
+      <li>How do I get to the store? (¿Cómo llego a la tienda?)</li>
+    </ul>
+    <button onclick="showNextStep('l9-step4')">Siguiente</button>
+  </div>
+
+  <!-- Step 4 -->
+  <div class="step" id="l9-step4">
+    <p><strong>Paso 4:</strong> Direcciones básicas:</p>
+    <p>Inglés → Español:</p>
+    <ul>
+      <li>Left → izquierda</li>
+      <li>Right → derecha</li>
+      <li>Straight / Ahead → derecho / adelante</li>
+      <li>Behind → detrás / atrás</li>
+    </ul>
+    <p>Ejemplos:</p>
+    <ul>
+      <li>Turn left → Gira a la izquierda</li>
+      <li>Go straight → Ve derecho / sigue adelante</li>
+      <li>It’s behind the school → Está detrás de la escuela</li>
+    </ul>
+    <button onclick="showNextStep('l9-step5')">Siguiente: Quiz</button>
+  </div>
+
+  <!-- Step 5: Quiz -->
+  <div class="step" id="l9-step5">
+    <h3>Quiz: Completa las frases</h3>
+    <p><em>Usa mayúscula al inicio y los vocabularios aprendidos.</em></p>
+
+    <p>1. Pide ayuda educadamente:</p>
+    <input type="text" id="l9-q1" placeholder="Ej: Excuse me, can you help me?" autocomplete="off">
+
+    <p>2. Pregunta dónde está la biblioteca:</p>
+    <input type="text" id="l9-q2" placeholder="Ej: Where is the library?" autocomplete="off">
+
+    <p>3. Pregunta cómo llegar a la tienda:</p>
+    <input type="text" id="l9-q3" placeholder="Ej: How do I get to the store?" autocomplete="off">
+
+    <p>4. Da una dirección usando left / right / straight / behind:</p>
+    <input type="text" id="l9-q4" placeholder="Ej: Turn left / Go straight / It’s behind" autocomplete="off">
+
+    <br><br>
+    <button onclick="checkLesson9()">Enviar respuestas</button>
+    <p id="l9-result"></p>
+  </div>
+</div>
+
+<script>
+  // Lesson 9 Quiz - validación flexible
+  function checkLesson9() {
+    const q1 = document.getElementById("l9-q1").value.trim().toLowerCase();
+    const q2 = document.getElementById("l9-q2").value.trim().toLowerCase();
+    const q3 = document.getElementById("l9-q3").value.trim().toLowerCase();
+    const q4 = document.getElementById("l9-q4").value.trim().toLowerCase();
+    const result = document.getElementById("l9-result");
+
+    const ok1 = q1.includes("excuse me");
+    const ok2 = q2.includes("where is");
+    const ok3 = q3.includes("how do i get");
+    const ok4 = q4.includes("left") || q4.includes("right") || q4.includes("straight") || q4.includes("behind");
+
+    if (ok1 && ok2 && ok3 && ok4) {
+      result.textContent = "🎉 ¡Excelente! Ya puedes pedir ayuda y direcciones en inglés.";
+      result.style.color = "green";
+    } else {
+      result.textContent = "❌ Algunas respuestas son incorrectas. ¡Intenta de nuevo!";
+      result.style.color = "red";
+    }
+  }
+</script>
+
+<div class="coming-soon">
+  <p>📚 ¡Más lecciones vendrán pronto! Mantente atento para aprender más inglés.</p>
+</div>
+
+</body>
+</html>

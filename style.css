@@ -1,0 +1,249 @@
+/* ------------------------
+   BODY & BACKGROUND
+------------------------ */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 20px;
+  color: #FFD700; /* gold text */
+  background-color: #121212; /* matte black */
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Subtle white mountain lines */
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 40px,
+    rgba(255,255,255,0.05) 41px,
+    rgba(255,255,255,0.05) 42px
+  );
+  z-index: 0;
+  pointer-events: none;
+  transform: rotate(0deg) translateX(-20%);
+}
+
+/* ------------------------
+   HEADINGS
+------------------------ */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2em;
+  color: #FFD700;
+  text-shadow: 1px 1px 2px #000;
+  position: relative;
+  z-index: 1;
+}
+
+/* ------------------------
+   INTRO TEXT
+------------------------ */
+.intro-text {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #FFD700;
+  text-shadow: 1px 1px 2px #000;
+}
+
+/* ------------------------
+   LESSON BUTTONS
+------------------------ */
+.lesson-button {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  margin: 15px auto;
+  padding: 14px 20px;
+  font-size: 1.1em;
+  background-color: #1e1e1e;
+  border: 2px solid #FFD700;
+  border-radius: 8px;
+  color: #FFD700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+  min-height: 48px; /* mobile tap target */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.lesson-button:hover {
+  background-color: #FFD700;
+  color: #1e1e1e;
+  transform: translateY(-2px);
+}
+
+.lesson-button:active {
+  transform: scale(0.97);
+}
+
+/* ------------------------
+   LESSON CONTENT BOXES
+------------------------ */
+.lesson-content {
+  max-width: 600px;
+  margin: 20px auto 40px;
+  padding: 25px;
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.6);
+  color: #FFD700;
+  position: relative;
+  z-index: 1;
+  transition: all 0.4s ease;
+}
+
+/* ------------------------
+   STEPS
+------------------------ */
+.step {
+  display: none;
+  margin-bottom: 20px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.step.visible {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.step ul {
+  padding-left: 20px;
+}
+
+/* ------------------------
+   PROGRESS BAR
+------------------------ */
+.progress-container {
+  width: 100%;
+  height: 15px;
+  background-color: #333;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background-color: #FFD700;
+  border-radius: 10px;
+  transition: width 0.5s ease;
+}
+
+/* ------------------------
+   INPUTS
+------------------------ */
+input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0 15px;
+  font-size: 1em;
+  border: 2px solid #FFD700;
+  border-radius: 8px;
+  background-color: #121212;
+  color: #FFD700;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  min-height: 40px; /* easier on mobile */
+}
+
+input[type="text"]:focus {
+  border-color: #FFEA00;
+  box-shadow: 0 0 10px rgba(255, 235, 0, 0.5);
+  outline: none;
+}
+
+/* ------------------------
+   QUIZ RESULTS
+------------------------ */
+#quiz-result,
+#lesson1-result,
+#lesson2-result,
+#lesson3-result,
+#l3-practice-result {
+  font-weight: bold;
+  font-size: 1.1em;
+  color: #FFD700;
+  text-shadow: 1px 1px 2px #000;
+  margin-top: 10px;
+}
+
+/* ------------------------
+   BUTTONS INSIDE LESSONS
+------------------------ */
+button {
+  padding: 12px 18px;
+  font-size: 1em;
+  border-radius: 8px;
+  border: 1px solid #FFD700;
+  cursor: pointer;
+  background-color: #1e1e1e;
+  color: #FFD700;
+  transition: transform 0.2s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  min-height: 48px; /* mobile tap target */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+}
+
+button:hover {
+  background-color: #FFD700;
+  color: #1e1e1e;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.6);
+}
+
+button:active {
+  transform: scale(0.97);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.4);
+}
+
+/* ------------------------
+   MOBILE RESPONSIVENESS
+------------------------ */
+@media (max-width: 650px) {
+  body {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1.6em;
+    margin-bottom: 20px;
+  }
+
+  .lesson-button {
+    width: 90%;
+    font-size: 1em;
+    padding: 12px;
+  }
+
+  .lesson-content {
+    margin: 15px;
+    padding: 15px;
+  }
+
+  input[type="text"] {
+    font-size: 0.95em;
+  }
+}
+.coming-soon {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #fff3cd; /* light yellow */
+  border: 1px solid #ffeeba;
+  border-radius: 5px;
+  color: #856404; /* dark yellow text */
+  text-align: center;
+  font-weight: bold;
+}
